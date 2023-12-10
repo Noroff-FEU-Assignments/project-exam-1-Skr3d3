@@ -1,0 +1,166 @@
+@import url(/css/variables.css);
+
+body {
+    font-family: "Josefin Slab", serif;
+    margin: 0px;
+    background-color: var(--bg);
+}
+main {
+    animation-name: "show-page";
+    animation: show-page 0.3s forwards;
+}
+main :is(p, a) {
+    font-size: 20px;
+    max-width: 70%;
+}
+main :is(h1, h2) {
+    font-size: 40px
+}
+header {
+    position: fixed;
+    top: 0;
+    height: 75px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header > *:not(nav) {
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+}
+footer h4 {
+    font-size: 1.2rem;
+}
+footer a {
+    padding: 5px;
+    margin: 5px;
+}
+footer section {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+}
+footer section div h4 {
+    max-width: 130px;
+    text-align: center;
+}
+footer > section:last-child {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    color: grey;
+    align-items: center;
+}
+.link-container {
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    z-index: 1;
+    width: 100vw;
+    background-color: var(--primarycolor);
+    color: var(--navcolor);
+}
+.socialmedia-container > * {
+    padding: 5px;
+}
+.logo {
+    content: url("/media/logo/travelbloglogo_white.png");
+    height: 70px;
+}
+nav {
+    position: absolute;
+    background-color: var(--primarycolor);
+    display: none;
+    z-index: 1;
+    align-items: center;
+    width: 200px;
+    flex-direction: column;
+    padding: 5px;
+    top: 75px;
+    right: 0;
+    border-radius: 5px;
+    animation-name: "show-page";
+    animation: show-page 0.3s forwards;
+}
+nav > * {
+    padding: 10px;
+    margin: 10px;
+    text-decoration: underline;
+}
+.indexh1 {
+    font-family: "Great Vibes", "Josefin Slab", serif;
+}
+#blog {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+
+}
+#blog div {
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: 1px 1px black;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#blog div p {
+    position: absolute;
+    left: ;
+}
+main section {
+    height: 101vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+.welcome-section {
+    background-image: url(/media/BGimage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.banner-section div {
+    background-image: url("/media/banner.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 350px;
+}
+button {
+    font-size: 20px;
+    min-width: 100px;
+    min-height: 39px;
+    padding: 5px;
+    color: var(--navcolor);
+    background-color: var(--secondarycolor);
+    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+/*Move to JS*/
+button:active {
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* KEYFRAMES */
+@keyframes show-page {
+    0% { opacity: 0; }
+    50% { opacity: 50%; }
+    100% { opacity: 100% }
+}
