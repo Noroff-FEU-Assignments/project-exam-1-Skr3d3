@@ -1,3 +1,17 @@
+const blogsContainer = document.querySelector(".blog-container");
+const openSinglePost = (dataUrl) => {
+    if(dataUrl){
+        window.location.href = dataUrl;
+    }
+};
+
+blogsContainer.addEventListener("click", function(event){
+    const clickedPost = event.target.closest(".blogpost-container-single")
+    if (clickedPost) {
+        const blogDetailsUrl = clickedPost.getAttribute("data-url");
+        openSinglePost(blogDetailsUrl);
+    }
+})
 
 // Fetch API
 
@@ -18,14 +32,11 @@ async function getPosts(url) {
     }
 };
 
-
-
 showAllPosts(postsData);
 
 function showAllPosts(posts) {
-    let blogPostsContainer = document.getElementById("blog");
+    let blogPostsContainer = document.querySelector(".blog-container");
     const showBlogPosts = postsData;
-
 
     showBlogPosts.forEach(function(post){
 
@@ -34,10 +45,14 @@ function showAllPosts(posts) {
         const dateOnly = date.toISOString().split('T')[0];
 
         blogPostsContainer.innerHTML += `
-        <div style="background-image: url(${imageUrl});">
-        <h3>${post.title.rendered}</h3>
-        <p>${dateOnly}</p>
-        <a>Click to see more!</a>
+        <div class="blogpost-container-single" style="background-image: url(${imageUrl});" data-url="blogspecific.html?id=${post.id}">
+            <div>
+                <h3>${post.title.rendered}</h3>
+                <p>${dateOnly}</p>
+            </div>
+            <div>
+                <a>Click to see more!</a>
+            </div>
         </div>
         `
     });

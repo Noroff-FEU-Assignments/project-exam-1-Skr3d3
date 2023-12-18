@@ -3,36 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><!--API-Data--></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Slab:wght@100;400;500&display=swap" rel="stylesheet"> 
+    <link href="css/general.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/58f57f3efa.js" crossorigin="anonymous"></script>
+    <script defer src="/scripts/general.js"></script>
+    <script defer src="/scripts/blogspecific.js"></script>
+    <script defer src ="/scripts/comment.js"></script>
+    <title>Blog</title>
 </head>
 <body>
     <header>
-        <image>
-        <nav>
-            <p>Home</p>
-            <p>Blog</p>
-            <p>Contact</p>
-            <p>About</p>
+        <image class="logo">
+        <i id="hamburger-menu" class="fa-solid fa-bars-staggered"></i>
+        <nav> 
+            <a>Home</a>
+            <a>Blog</a>
+            <a>Contact</a>
+            <a>About</a>
         </nav>
     </header>
     <main>
-        <section>
-        <h1><!--API-Data--></h1>
-        <div>
-            <!--API-Data-->
-        </div>
+        <section class="blogspecific-section">
+        </section>
+        <section class="comment-section">
+        <form id="comment-form">
+        <input type="text" id="author" name="author" placeholder="Enter name..." required>
+        <input type="email" id="email" name="email" placeholder="Enter email..." required>
+        <textarea id="comment" name="comment" placeholder="Enter your comment..."></textarea>
+        <button for="comment-form">Comment</button>
+        </form>
         </section>
     </main>
     <footer>
-        <image>
-        <div>
-        <p>Contact</p>
-        <p>Credits</p>
-        <p>Subscribe</p>
-        </div>
-        <div class="socialmedia-container">
-            <!--Social Media icons-->
-        </div>
+        <section>
+            <div>
+            <h4>Patrick's Travel Blog</h4>
+            <image class="logo">
+            </div>
+            <div class="link-container">
+            <h4>General</h4>
+            <a>Contact</a>
+            <a>Credits</a>
+            <a>Subscribe</a>
+            </div>
+            <div class="link-container">
+            <h4>Connect</h4>
+            <a><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </section>
+        <section>
+            <p>© 2023 Patrick's Travel Blog. Website by Patrick Skrede.</p>
+            <div class="socialmedia-container">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+        </section>
     </footer>
 </body>
 </html>
