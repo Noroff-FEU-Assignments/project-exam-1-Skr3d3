@@ -15,7 +15,7 @@ blogsContainer.addEventListener("click", function(event){
 
 // Fetch API
 
-const baseUrl ="https://blog.skr3d3.com/wp-json/wp/v2/posts?_embed";
+const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts?_embed";
 
 let postsData = [];
 

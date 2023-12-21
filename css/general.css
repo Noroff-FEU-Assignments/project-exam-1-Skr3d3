@@ -1,13 +1,17 @@
 @import url(/css/variables.css);
 
 body {
-    display:flex;
-    flex-direction: column;
+    /* display:flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     font-family: "Josefin Slab", serif;
     margin: 0px;
     background-color: var(--bg);
 }
 main {
+    overflow: scroll;
+    flex-grow: 1;
     animation-name: "show-page";
     animation: show-page 0.3s forwards;
 }
@@ -17,6 +21,9 @@ main :is(p, a) {
 }
 main :is(h1, h2) {
     font-size: 40px
+}
+a:visited {
+    color: var(--secondarycolor)
 }
 header {
     position: fixed;
@@ -32,11 +39,13 @@ header > *:not(nav) {
     margin: 10px;
     font-size: 30px;
 }
+header i {
+    color: var(--secondarycolor)
+}
 footer {
     height: 280px;
     display: flex;
     flex-direction: column;
-    bottom:0;
 }
 footer h4 {
     font-size: 1.2rem;
@@ -101,12 +110,43 @@ nav {
     animation: show-page 0.3s forwards;
 }
 nav > * {
-    padding: 10px;
-    margin: 10px;
+    margin: 15px 0 15px 0;
+    padding: 20px;
+    font-weight: bold;
     text-decoration: underline;
+    text-underline-offset: 5px;
+}
+nav a:visited {
+    color: var(--navcolor);
 }
 .indexh1 {
     font-family: "Great Vibes", "Josefin Slab", serif;
+}
+.blogspecific-section {
+    margin-top: 100px;
+}
+.blog-specific-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+.comment-section {
+}
+.comments-container {
+    display: flex;
+    flex-direction: column;
+}
+.comment-form-container {
+}
+#comment-form {
+    background-color: var(--primarycolor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#author{
+    align-self: left
 }
 .blog-section {
     display: grid;
@@ -149,9 +189,8 @@ nav > * {
     font-size: 15px;
     position: absolute;
     right:0; 
-    margin: 
 }
-main section {
+.full-section {
     height: 101vh;
     display: flex;
     flex-direction: column;
@@ -184,13 +223,14 @@ main section {
     border-radius: 5px;
 }
 .about-section {
-    margin: 150px 0 150px 0;
+    margin: 150px 10px 150px 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: left;
 }
 .about-section p {
-    max-width: 600px;
+    max-width: 80%;
 }
 .about-section img {
     height: 300px;
@@ -215,6 +255,9 @@ main section {
 
 .about-section img {
     width: 600px;
+}
+.about-section p {
+    max-width: 600px;
 }
 
 }

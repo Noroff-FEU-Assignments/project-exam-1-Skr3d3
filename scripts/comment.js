@@ -2,7 +2,7 @@
 
 const commentForm = document.getElementById("comment-form");
 
-commentForm.addEventListener("submit",async function(event){
+commentForm.addEventListener("submit", async function(event){
     event.preventDefault();
 
     const postId = id;
@@ -12,14 +12,14 @@ commentForm.addEventListener("submit",async function(event){
 
     const commentData = {
         post: postId,
-        name: author,
-        email: email,
-        comment: comment
+        author_name: author,
+        author_email: email,
+        content: comment
     };
 await postComment(commentData);
 });
 
-const url = `https://blog.skr3d3.com/wp-json/wp/v2/comments?post=${id}`
+const url = `http://localhost/travelblog/wp-json/wp/v2/comments`
 
 async function postComment(commentData) {
     try{
@@ -37,7 +37,7 @@ async function postComment(commentData) {
     console.log("Commen posted succesfully", responseData)
 }
 catch(error){
-    console.warn("Error posting comment", error)
+    console.error("Error posting comment", error)
 }
 finally{
 }

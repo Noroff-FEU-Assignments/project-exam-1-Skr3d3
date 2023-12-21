@@ -9,7 +9,7 @@ const blogPostContainer = document.querySelector(".blogspecific-section")
 
 // Fetch API
 
-const blogPostUrl =`https://blog.skr3d3.com/wp-json/wp/v2/posts?_embed/&id=${id}`;
+const blogPostUrl =`http://localhost/travelblog/wp-json/wp/v2/posts?_embed/&id=${id}`;
 
 async function getPosts(url) {
     try{
@@ -27,6 +27,7 @@ async function getPosts(url) {
             <p>${dateOnly}</p>
             <div class="blog-specific-container">
             <img src="${imageUrl}" width="100px">
+            <p>${post.excerpt.rendered}</p>
             </div>
             `
         } else {

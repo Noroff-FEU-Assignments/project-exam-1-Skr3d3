@@ -37,7 +37,7 @@ else if (clickedElement.closest(".next")){
 
 // Fetch API
 
-const baseUrl ="https://blog.skr3d3.com/wp-json/wp/v2/posts";
+const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts";
 
 let postsData = [];
 
