@@ -1,6 +1,7 @@
 
 
 const commentForm = document.getElementById("comment-form");
+const commentsContainer = document.querySelector(".comments-container");
 
 commentForm.addEventListener("submit", async function(event){
     event.preventDefault();
@@ -41,4 +42,23 @@ catch(error){
 }
 finally{
 }
-}
+};
+
+async function fetchComments() {
+    try{
+        const response = await fetch(url);
+        commentData = await response.json();
+
+
+        console.log(commentData);
+
+        commentData.forEach(function(comment){
+            commentsContainer.innerHTML += `
+            <p>${comment.content.rendered}</p>
+            `
+        })
+    }
+    catch(error){console.error("Unable to retrieve comments", error)}
+    finally{}
+};
+fetchComments()
