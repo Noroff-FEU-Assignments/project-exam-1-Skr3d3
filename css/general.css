@@ -1,8 +1,6 @@
 @import url(/css/variables.css);
 
 body {
-    /* display:flex;
-    flex-direction: column; */
     display: grid;
     grid-template-rows: auto 1fr auto;
     font-family: "Josefin Slab", serif;
@@ -43,18 +41,21 @@ header i {
     color: var(--secondarycolor)
 }
 footer {
-    height: 280px;
+    padding-top: 20px;
+    height: 210px;
     display: flex;
     flex-direction: column;
 }
 footer h4 {
+    display:none;
     font-size: 1.2rem;
 }
 footer a {
+    color: white;
     padding: 5px;
-    margin: 5px;
+    margin: 0 5px 0 5px;
 }
-footer section {
+.footercontent-container {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -70,6 +71,40 @@ footer > section:last-child {
     color: grey;
     align-items: center;
 }
+.link-container {
+    display: flex;
+    flex-direction: column;
+}
+.socialmedia-mobile-container {
+    display:flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+.socialmedia-desktop-container {
+    display:none;
+}
+.signature {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.socialmedia-container > * {
+    padding: 0;
+}
+#searchbar {
+    font-size: 20px;
+    letter-spacing: 1px;
+    display:none;
+    position: fixed;
+    top: 76px;
+    width: 280px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    
+
+}
 .error-message {
     display: flex;
     flex-direction: column;
@@ -77,18 +112,11 @@ footer > section:last-child {
     font-size: 3rem;
     box-shadow: 3px 3px 10px 5px var(--secondarycolor), -1px -1px 5px 3px red;
 }
-.link-container {
-    display: flex;
-    flex-direction: column;
-}
 header, footer {
     z-index: 1;
     width: 100vw;
     background-color: var(--primarycolor);
     color: var(--navcolor);
-}
-.socialmedia-container > * {
-    padding: 5px;
 }
 .logo {
     content: url("/media/logo/travelbloglogo_white.png");
@@ -122,37 +150,157 @@ nav a:visited {
 .indexh1 {
     font-family: "Great Vibes", "Josefin Slab", serif;
 }
+
+/*Index*/
+
+.full-section {
+    height: 101vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+.welcome-section {
+    background-image: url(/media/BGimage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.banner-section div {
+    background-image: url("/media/banner.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 350px;
+}
+.default-button {
+    font-size: 20px;
+    min-width: 100px;
+    min-height: 39px;
+    padding: 5px;
+    color: var(--navcolor);
+    background-color: var(--secondarycolor);
+    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/*Contact*/
+
+#contactform {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 70%;
+}
+.contact-section {
+    text-align: left;
+}
+#contactform :is(input, select) {
+    border: 1px solid black;
+    background-color: white;
+}
+#message {
+    height: 100px
+}
+.error {
+    display: none;
+    font-size: 0.9rem;
+    color:red;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    -webkit-text-stroke: black;
+}
+#submitmessage {
+    font-size: 20px;
+    text-align: center;
+}
+.disabled {
+    opacity: 50%;
+}
+.wiggleanimation {
+    animation: wiggle 100ms ease-in-out infinite;
+}
+/*Blog specific page*/
+
 .blogspecific-section {
+    text-align: center;
     margin-top: 100px;
 }
 .blog-specific-container {
+    max-width: 900px;
+    margin:auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
 }
+.images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 300px;
+}
+.images-container img {
+    object-fit:cover;
+    width: 100%;
+    height: 200px;
+}
+
+/*Comments*/
+
 .comment-section {
-}
-.comments-container {
-    display: flex;
-    flex-direction: column;
-}
-.comment-form-container {
-}
-#comment-form {
-    background-color: var(--primarycolor);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#author{
-    align-self: left
+.form-container, .comments-container {
+    min-width: 350px;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    background-color: var(--primarycolor);
 }
+.form-container {
+    text-align: right;
+    margin-bottom: 50px;
+}
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+#comment-form :is(input, textarea) {
+    background-color: var(--boxcolor);
+    font-family: "Josefin Slab", serif;
+    font-size: 20px;
+}
+.comments-container {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+.comments-container div {
+    background-color: var(--boxcolor);
+    margin: auto;
+}
+.comment-author {
+    font-style: italic;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.comment-author > * {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/*Blog page*/
+
 .blog-section {
     display: grid;
     padding-top: 75px;
-    padding-bottom: 450px;
+    padding-bottom: 50px;
     z-index: 0;
+    text-align: center;
 }
 .blog-container {
     display: grid;
@@ -188,40 +336,17 @@ nav a:visited {
 .blogpost-container-single p {
     font-size: 15px;
     position: absolute;
-    right:0; 
+    right:0;
 }
-.full-section {
-    height: 101vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center
+#showmore-button {
+    display: none;
+    margin: auto;
+    margin-bottom: 50px;
+    
 }
-.welcome-section {
-    background-image: url(/media/BGimage.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-.banner-section div {
-    background-image: url("/media/banner.jpg");
-    background-position: center;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 350px;
-}
-.default-button {
-    font-size: 20px;
-    min-width: 100px;
-    min-height: 39px;
-    padding: 5px;
-    color: var(--navcolor);
-    background-color: var(--secondarycolor);
-    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
+
+/*About*/
+
 .about-section {
     margin: 150px 10px 150px 10px;
     display: flex;
@@ -239,6 +364,8 @@ nav a:visited {
     object-position: 0 20%;
 }
 
+/*Misc*/
+
 /*Move to JS*/
 .default-button:active {
     transform: scale(0.9);
@@ -247,11 +374,12 @@ nav a:visited {
 
 
 
-@media screen and (min-width: 720px) { 
+@media screen and (min-width: 720px) {
 
 .blog-container {
     grid-template-columns: repeat(2, 1fr);
 };
+
 
 .about-section img {
     width: 600px;
@@ -259,11 +387,25 @@ nav a:visited {
 .about-section p {
     max-width: 600px;
 }
-
+.form-container, .comments-container {
+    min-width: 600px;
+}
+footer section h4 {
+    display:block;
+}
+footer {
+    height: 280px;
+}
+.socialmedia-desktop-container {
+    display:flex;
+}
+.socialmedia-mobile-container {
+    display:none;
+}
 }
 
 
-@media screen and (min-width: 1024px) { 
+@media screen and (min-width: 1024px) {
 
 .blog-container {
     grid-template-columns: repeat(3, 1fr);
@@ -273,7 +415,7 @@ nav a:visited {
 }
 }
 
-@media screen and (min-width: 1820px) { 
+@media screen and (min-width: 1820px) {
 
 .blog-container {
     grid-template-columns: repeat(4, 1fr);
@@ -284,9 +426,18 @@ nav a:visited {
 }
 
 /* KEYFRAMES */
+
 @keyframes show-page {
     0% { opacity: 0; }
     50% { opacity: 50%; }
     100% { opacity: 100% }
 }
 
+@keyframes wiggle {
+    0%, 100% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+  }

@@ -16,7 +16,9 @@
 <body>
     <header>
         <image class="logo">
-        <i id="hamburger-menu" class="fa-solid fa-bars-staggered"></i>
+        <i id="searchbar-label" class="fa-solid fa-magnifying-glass"></i>
+        <input id="searchbar" placeholder="Search for blog posts..."></input>
+        <i id="hamburger-menu" class="fa-solid fa-bars"></i>
         <nav> 
             <a href="index.html">Home</a>
             <a href="blog.html">Blog</a>
@@ -28,18 +30,19 @@
         <section class="welcome-section full-section">
         <h1 class="indexh1">Travel Blog</h1>
         <p>Travelling to destinations in Norway</p>
+        <button id="enterblog-button" class="default-button">Go to blog</button>
+        
         </section>
 
         <section class="carousell-section full-section">
             <h2>Featured</h2>
             <div class="carousel-container">
             <div class="featured-container carousel">
-                <!--Live data-->>
+                <!--Live data-->
             </div>
             </div>
         </section>
 
- {
         <section class="banner-section full-section">
             <h2>Visit Norway</h2>
             <div>
@@ -50,7 +53,7 @@
             <h2>Recent</h2>
             <div class="carousel-container">
             <div class="recent-container carousel">
-                <!--Live data-->>
+                <!--Live data-->
             </div>
             </div>
         </section>
@@ -58,36 +61,44 @@
         <section class="mailinglist-section full-section">
             <h2>Mailing list</h2>
             <p>Subscribe to get the latest review directly to your inbox</p>
-            <button class="default-button">Subscribe</button>
+            <button class="default-button disabled">Subscribe</button>
         </section>
     </main>
     <footer>
         <section>
+            <div class="footercontent-container">
             <div>
-            <h4>Patrick's Travel Blog</h4>
-            <image class="logo">
+                <h4>Patrick's Travel Blog</h4>
+                <image class="logo">
             </div>
             <div class="link-container">
-            <h4>General</h4>
-            <a>Contact</a>
-            <a>Credits</a>
-            <a>Subscribe</a>
+                <h4>General</h4>
+                <a>Contact</a>
+                <a>Credits</a>
+                <a>Subscribe</a>
             </div>
-            <div class="link-container">
-            <h4>Connect</h4>
-            <a><i class="fa-brands fa-facebook"></i> Facebook</a>
-            <a><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <a><i class="fa-brands fa-twitter"></i> Twitter</a>
-            <a><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <div class="link-container socialmedia-desktop-container">
+                <h4>Connect</h4>
+                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+            </div>
+            <div class="socialmedia-mobile-container">
+                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> </a>
+                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> </a>
+                <a href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i> </a>
+                <a href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> </a>
             </div>
         </section>
-        <section>
+        <section class="signature">
             <p>© 2023 Patrick's Travel Blog. Website by Patrick Skrede.</p>
             <div class="socialmedia-container">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-linkedin"></i>
+                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </section>
     </footer>

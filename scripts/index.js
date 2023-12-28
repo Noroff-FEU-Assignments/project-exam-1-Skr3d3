@@ -4,6 +4,17 @@ const recentContainer = document.querySelector(".recent-container");
 const carouselContainer = document.querySelectorAll(".carousel-container");
 const carouselSlidesContainer = document.querySelectorAll(".carousel");
 
+document.getElementById("enterblog-button").addEventListener("click", function() {
+    window.location.href = "/blog.html";
+});
+
+const disabledBtn = document.querySelector(".disabled");
+
+disabledBtn.addEventListener("click", function(){
+    disabledAnimation(disabledBtn);
+    disabledBtn.innerHTML = "TEMPORARY DISABLED"
+});
+
 function message(title, error) {
     return `<div class="error-message"><h4>${title}</h4><p>${error.message}</p></div>`;
 };
@@ -37,9 +48,11 @@ else if (clickedElement.closest(".next")){
 
 // Fetch API
 
-const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts";
+const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts?_embed";
 
 let postsData = [];
+
+console.log(postsData)
 
 async function getPosts(url) {
     try{
