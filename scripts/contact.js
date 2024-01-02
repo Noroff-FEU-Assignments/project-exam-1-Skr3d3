@@ -1,7 +1,7 @@
-const formName = document.getElementById("name");
-const formEmail = document.getElementById("email");
-const formSubject = document.getElementById("subject");
-const formText = document.getElementById("message");
+const formName = document.getElementById("your-name");
+const formEmail = document.getElementById("your-email");
+const formSubject = document.getElementById("your-subject");
+const formText = document.getElementById("your-message");
 
 const formNameError = document.getElementById("nameerror");
 const formEmailError = document.getElementById("emailerror");
@@ -85,6 +85,31 @@ const displayMessageError = () => {
  formText.addEventListener("keyup", enableButton);
 
 
+const url = "http://localhost/travelblog/wp-json/contact-form-7/v1/contact-forms/e48b562/feedback"
+
+async function submitForm(contactForm) {
+    try{
+        const body = new FormData(contactForm);
+    
+    const response = await fetch(url, {
+            method: "POST",
+            body
+        })
+
+    if (!response.ok) {
+        throw new Error(response.status);
+    }
+
+    const responseData = await response.json();
+    console.log("Contactform submitted", responseData)
+
+}
+catch(error){
+    console.error("Error submitting contactform", error)
+}
+finally{
+}
+};
 
  
  formButton.addEventListener("click", function(event){
@@ -96,8 +121,9 @@ const displayMessageError = () => {
         submitMessage.style.display = "block";
     }else {
     submitMessage.innerHTML = "Your message has been submitted!<br>Thank you for reaching out.";
+    submitForm();
     formButton.classList.add("disabled");
     submitMessage.classList.remove("error");
     contactForm.reset();
     }
- })
+});

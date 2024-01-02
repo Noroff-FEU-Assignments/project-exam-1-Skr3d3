@@ -13,10 +13,6 @@ blogsContainer.addEventListener("click", function(event){
     }
 })
 
-const showMoreBtn = document.getElementById("showmore-button");
-let blogPostsContainer = document.querySelector(".blog-container");
-let numberOfPosts = 5;
-
 // Fetch API
 
 const queryString = document.location.search;
@@ -29,12 +25,13 @@ function checkQuery(post) {
 
 
 
-const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts?_embed";
+const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts?_embed&per_page=50";
 
 let postsData = [];
 
 async function getPosts(url) {
     try{
+    loadingSplash("flex")
     const response = await fetch(url);
     postsData = await response.json();
     if(searchQuery){
@@ -45,6 +42,7 @@ async function getPosts(url) {
         console.error("error", error);
     }
     finally {
+        loadingSplash("none")
         if(postsData.length > 0){
         showPosts(postsData);
     }else {
@@ -58,6 +56,11 @@ async function getPosts(url) {
 function showPosts() {
     blogPostsContainer.innerHTML = "";
     const showBlogPosts = postsData;
+
+    console.log("blogpostlength", showBlogPosts.length);
+    console.log("number of posts", numberOfPosts);
+
+    console.log("postdata", postsData)
 
     for(let i = 0; i < numberOfPosts; i++){
 
@@ -84,6 +87,10 @@ function showPosts() {
         showMoreBtn.style.display = "none";
     }};
 };
+
+const showMoreBtn = document.getElementById("showmore-button");
+let blogPostsContainer = document.querySelector(".blog-container");
+let numberOfPosts = 10;
 
 function loadMorePosts() {
     numberOfPosts += 5;

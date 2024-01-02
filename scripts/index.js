@@ -1,4 +1,6 @@
 
+
+const featuredSection = document.getElementById("featured-section")
 const featuredContainer = document.querySelector(".featured-container");
 const recentContainer = document.querySelector(".recent-container");
 const carouselContainer = document.querySelectorAll(".carousel-container");
@@ -18,6 +20,9 @@ disabledBtn.addEventListener("click", function(){
 function message(title, error) {
     return `<div class="error-message"><h4>${title}</h4><p>${error.message}</p></div>`;
 };
+
+
+// Carousel
 
 function carousel(event) {
 
@@ -56,9 +61,10 @@ console.log(postsData)
 
 async function getPosts(url) {
     try{
-    const response = await fetch(url);
-    if(!response.ok) throw new Error("Bad response from the server")
-    postsData = await response.json();
+        loadingSplash("flex");
+        const response = await fetch(url);
+        if(!response.ok) throw new Error("Bad response from the server")
+        postsData = await response.json();
     }
     catch(error) {
         console.error(error);
@@ -66,6 +72,7 @@ async function getPosts(url) {
         recentContainer.innerHTML = message("Error", error)
     }
     finally {
+        loadingSplash("none");
         filterStickyPosts(postsData);
         filterRecentPosts(postsData);
     }
@@ -78,6 +85,10 @@ getPosts(baseUrl);
 
 function filterStickyPosts() {
     const stickyPosts = postsData.filter(post => post.sticky);
+
+    if(stickyPosts.length <= 0){
+        featuredSection.style.display = "none";
+    }
 
     stickyPosts.forEach(function(post){
         let imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/media/placeholderblogpost.jpg";

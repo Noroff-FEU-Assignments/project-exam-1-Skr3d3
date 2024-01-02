@@ -1,6 +1,9 @@
 // Variables
 
-const logo = document.querySelector(".logo")
+const logo = document.querySelector(".logo");
+const body = document.body;
+const footer = document.querySelector("footer");
+const header = document.querySelector("header");
 
 //Misc
 
@@ -16,6 +19,15 @@ logo.addEventListener("click", function(){
 logo.addEventListener("mouseover", function(){
     logo.style.cursor = "pointer";
 });
+
+// Loading splash
+
+const loadingAnimation = document.querySelectorAll(".loading-container");
+
+const loadingSplash = (test) => {
+loadingAnimation.forEach(function(loading){
+    loading.style.display = test;
+})}
 
 //Searchbar
 

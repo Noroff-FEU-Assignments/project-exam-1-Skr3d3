@@ -14,8 +14,10 @@
 <body>
     <header>
         <image class="logo">
-            <i id="searchbar-label" class="fa-solid fa-magnifying-glass"></i>
-            <input id="searchbar" placeholder="Search for blog posts..."></input>
+        <div class="searchbar-container">
+        <input id="searchbar" placeholder="Search for blog posts..."></input>
+        <i id="searchbar-label" class="fa-solid fa-magnifying-glass"></i>
+        </div>
         <i id="hamburger-menu" class="fa-solid fa-bars"></i>
         <nav> 
             <a href="index.html">Home</a>
@@ -23,22 +25,22 @@
             <a href="contact.html">Contact</a>
             <a href="about.html">About</a>
         </nav>
-    </header>
+    </header
     <main>
         <section class="contact-section full-section">
         <h1>Contact</h1>
         <h2 id="submitmessage"></h2>
-        <form id="contactform" method="post">
-            <label for="name">Name</label>
-            <input type="name" id="name" name="name">
+        <form id="contactform">
+            <label for="your-name">Name</label>
+            <input type="name" id="your-name" name="name">
             <div id="nameerror" class="error">Both first and last name required</div>    
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+            <label for="your-email">Email</label>
+            <input type="email" id="your-email" name="email">
             <div id="emailerror" class="error">Please enter a valid email</div>    
 
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
+            <label for="your-subject">Subject</label>
+            <select id="your-subject" name="subject">
                 <option value="">Choose subject</option>
                 <option value="general">General Inquiry</option>
                 <option value="technical">Technical question</option>
@@ -46,8 +48,8 @@
             </select>
             <div id="subjecterror" class="error">Please select a subject</div>    
     
-            <label for="message">Message</label>
-            <input type="textbox" id="message" name="message">
+            <label for="your-message">Message</label>
+            <input type="textbox" id="your-message" name="message">
             <div id="texterror" class="error">Minimum 10 characters is needed</div>    
         </form>
         <button class="default-button disabled" type="submit" form="contactform">Send</button>

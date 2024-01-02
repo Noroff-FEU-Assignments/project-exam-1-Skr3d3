@@ -4,7 +4,46 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const blogPostContainer = document.querySelector(".blogspecific-section")
+const blogPostContainer = document.querySelector(".blogspecific-section");
+
+const allImages = document.querySelectorAll("img");
+
+const elementOpacity = (opacity) => {
+    header.style.opacity = `${opacity}%`;
+    commentsContainer.style.opacity = `${opacity}%`;
+    formContainer.style.opacity = `${opacity}%`;
+}
+
+// Image lightbox
+
+blogPostContainer.addEventListener("click", function(event){
+    if(event.target.closest("img")){
+        event.target.classList.add("lightbox-image");
+        body.classList.add("lightbox-bg");
+        
+        document.querySelectorAll("img").forEach(function(image){
+        if(!image.classList.contains("lightbox-image") && !image.classList.contains("logo")){
+        image.style.display = "none";
+        }})
+        }
+    footer.style.display = "none";
+    elementOpacity(60)
+    }
+);
+
+document.addEventListener("click", function(event){
+    if(event.target.classList.contains("lightbox-image")){
+}else {
+    document.querySelectorAll("img").forEach(function(image){
+        image.classList.remove("lightbox-image");
+        image.style.display = "inherit";
+    })
+    body.classList.remove("lightbox-bg");
+    footer.style.display = "flex";
+    elementOpacity(100)
+    
+}});
+
 
 
 // Fetch API
@@ -18,7 +57,6 @@ async function getPosts(url) {
 
     if(postData){
             let post = postData;
-            let featuredImageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/media/placeholderblogpost.jpg";
             const date = new Date(post.date_gmt);
             const dateOnly = date.toISOString().split('T')[0];
 
@@ -26,16 +64,21 @@ async function getPosts(url) {
 
             const tempDiv = document.createElement("div");
             tempDiv.innerHTML = post.content.rendered;
-
             const imageElements = tempDiv.querySelectorAll("img");
-
-            console.log(imageElements);
-
+            const textElements = tempDiv.querySelector("p");
+            let textContainer = textElements.outerHTML;
             let imagesContainer = "";
 
-            for(let i = 0; i < imageElements.length - 1; i++) {
-                imagesContainer += imageElements[i].outerHTML;
+
+            for(let i = 0; i < imageElements.length; i++) {
+                const image = imageElements[i];
+                if(image.classList.contains("avatar")){
+                    continue;
+                } else {
+                imagesContainer += image.outerHTML;
+                };
             };
+            
     
             blogPostContainer.innerHTML += `
             <h1>${post.title.rendered}</h1>
@@ -44,7 +87,7 @@ async function getPosts(url) {
             <div class="images-container">
             ${imagesContainer}
             </div>
-            <p>${post.excerpt.rendered}</p>
+            <p>${textContainer}</p>
             </div>
             `
         } else {
@@ -56,4 +99,4 @@ async function getPosts(url) {
     finally {
     }
 };
-getPosts(blogPostUrl)
+getPosts(blogPostUrl);
