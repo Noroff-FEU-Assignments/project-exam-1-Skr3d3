@@ -25,7 +25,7 @@ function checkQuery(post) {
 
 
 
-const baseUrl ="http://localhost/travelblog/wp-json/wp/v2/posts?_embed&per_page=50";
+const baseUrl ="https://travelblog.skr3d3.com/wp-json/wp/v2/posts?_embed&per_page=50";
 
 let postsData = [];
 

@@ -7,7 +7,7 @@ const submitButton = document.getElementById("submitcomment-button");
 
 
 async function fetchComments() {
-    const url = `http://localhost/travelblog/wp-json/wp/v2/comments?post=${id}`;
+    const url = `https://travelblog.skr3d3.com/wp-json/wp/v2/comments?post=${id}`;
     try{
         const response = await fetch(url);
         const commentData = await response.json();
@@ -41,7 +41,7 @@ async function fetchComments() {
 fetchComments()
 
 
-const url = `http://localhost/travelblog/wp-json/wp/v2/comments`
+const url = `https://travelblog.skr3d3.com/wp-json/wp/v2/comments`
 
 async function postComment(commentData) {
     try{

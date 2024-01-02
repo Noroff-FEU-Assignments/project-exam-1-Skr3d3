@@ -85,7 +85,7 @@ const displayMessageError = () => {
  formText.addEventListener("keyup", enableButton);
 
 
-const url = "http://localhost/travelblog/wp-json/contact-form-7/v1/contact-forms/e48b562/feedback"
+const url = "https://travelblog.skr3d3.com/wp-json/contact-form-7/v1/contact-forms/e48b562/feedback"
 
 async function submitForm(contactForm) {
     try{
