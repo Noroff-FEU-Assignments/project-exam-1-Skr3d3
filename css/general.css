@@ -6,9 +6,11 @@ body {
     font-family: "Josefin Slab", serif;
     margin: 0px;
     background-color: var(--bg);
+    overflow-x: hidden;
 }
 main {
-    overflow: scroll;
+    height: calc(100vh - 210px);
+    overflow-y: scroll;
     animation-name: "show-page";
     animation: show-page 0.3s forwards;
 }
@@ -40,6 +42,7 @@ header i {
     color: var(--secondarycolor)
 }
 footer {
+    bottom: 0;
     padding-top: 20px;
     height: 210px;
     display: flex;
@@ -397,6 +400,11 @@ nav a:visited {
     margin: 0;
     padding: 10px;
     position: absolute;
+}
+.blog-section .loading-container {
+    position: fixed;
+    top: 30%;
+    left: 30%;
 }
 .loading-container p {
     color: var(--primarycolor);
