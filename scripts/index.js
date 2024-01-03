@@ -53,7 +53,7 @@ else if (clickedElement.closest(".next")){
 
 // Fetch API
 
-const baseUrl ="https://travelblog.skr3d3.com/wp-json/wp/v2/posts?_embed";
+const baseUrl ="http://travelblog.skr3d3.com/wp-json/wp/v2/posts?_embed";
 
 let postsData = [];
 
