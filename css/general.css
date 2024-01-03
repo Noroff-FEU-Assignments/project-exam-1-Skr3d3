@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 main {
-    height: calc(100vh - 210px);
+    min-height: calc(100vh - 210px);
     overflow-y: scroll;
     animation-name: "show-page";
     animation: show-page 0.3s forwards;
