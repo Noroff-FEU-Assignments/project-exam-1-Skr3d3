@@ -48,7 +48,7 @@ document.addEventListener("click", function(event){
 
 // Fetch API
 
-const blogPostUrl =`http://localhost/travelblog/wp-json/wp/v2/posts/${id}`;
+const blogPostUrl =`https://travelblog.skr3d3.com/wp-json/wp/v2/posts/${id}`;
 
 async function getPosts(url) {
     try{
