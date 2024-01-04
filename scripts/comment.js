@@ -69,7 +69,7 @@ async function postComment(commentData) {
 }
 catch(error){
     console.error("Error posting comment", error)   
-    submitMessage.innerHTML = "Error! Currenctly unavailable.";
+    submitMessage.innerHTML = "Something went wrong";
     submitMessage.style.color = "red";
     submitButton.style.display = "none";
     setTimeout(function(){
