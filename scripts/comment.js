@@ -4,6 +4,7 @@ const formContainer = document.querySelector(".form-container");
 const commentForm = document.getElementById("comment-form");
 const commentsContainer = document.querySelector(".comments-container");
 const submitButton = document.getElementById("submitcomment-button");
+const submitMessage = document.getElementById("submitcomment-message")
 
 
 async function fetchComments() {
@@ -57,9 +58,25 @@ async function postComment(commentData) {
 
     const responseData = await response.json();
     console.log("Comment posted succesfully", responseData)
+
+    submitMessage.innerHTML = "Comment posted successfully!";
+    submitButton.style.display = "none";
+    submitMessage.style.color = "white";
+    setTimeout(function(){
+    submitMessage.innerHTML = "";
+    submitButton.style.display = "";
+    },2000)
 }
 catch(error){
-    console.error("Error posting comment", error)
+    console.error("Error posting comment", error)   
+    submitMessage.innerHTML = "Error! Currenctly unavailable.";
+    submitMessage.style.color = "red";
+    submitButton.style.display = "none";
+    setTimeout(function(){
+    submitMessage.innerHTML = "";
+    submitMessage.style.color = "white";
+    submitButton.style.display = "";
+    },3000)
 }
 finally{
 }

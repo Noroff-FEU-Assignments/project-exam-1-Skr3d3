@@ -16,15 +16,27 @@ const elementOpacity = (opacity) => {
 
 // Image lightbox
 
+function addImagesClass(){
+    document.querySelectorAll(".images-container img").forEach(function(containerImage){
+        containerImage.classList.add("wordpress-images");
+    })
+}
+
 blogPostContainer.addEventListener("click", function(event){
     if(event.target.closest("img")){
         event.target.classList.add("lightbox-image");
         body.classList.add("lightbox-bg");
+        document.querySelectorAll(".images-container img").forEach(function(containerImage){
+            containerImage.classList.remove("wordpress-images");
+        })
         
         document.querySelectorAll("img").forEach(function(image){
         if(!image.classList.contains("lightbox-image") && !image.classList.contains("logo")){
         image.style.display = "none";
         }})
+        document.querySelectorAll(".images-container img").forEach(function(containerImage){
+            containerImage.style.height = "600px";
+            })
         }
     footer.style.display = "none";
     elementOpacity(60)
@@ -37,6 +49,9 @@ document.addEventListener("click", function(event){
     document.querySelectorAll("img").forEach(function(image){
         image.classList.remove("lightbox-image");
         image.style.display = "inherit";
+        document.querySelectorAll(".images-container img").forEach(function(containerImage){
+            containerImage.classList.add("wordpress-images");
+        })
     })
     body.classList.remove("lightbox-bg");
     footer.style.display = "flex";
@@ -97,6 +112,7 @@ async function getPosts(url) {
         console.error("error", error);
     }
     finally {
+    addImagesClass()
     }
 };
 getPosts(blogPostUrl);

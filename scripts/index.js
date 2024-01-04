@@ -31,11 +31,31 @@ function carousel(event) {
 function updateSlidePosition() {
     if (blogSlideIndex < 0) {
         blogSlideIndex = 0;
+
+
     } else if (blogSlideIndex >= event.children.length){
         blogSlideIndex = event.children.length - 1;
     }  
     event.style.transform = `translateX(${-blogSlideIndex * 100}%)`
 };
+
+function toggleArrow() {
+    document.querySelectorAll(".prev").forEach(function(prevBtn){
+        if (blogSlideIndex <= 0) {
+            prevBtn.style.display = "none"
+        } else {
+            prevBtn.style.display = "block"
+        }  
+    })
+    
+    document.querySelectorAll(".next").forEach(function(nextBtn){
+        if (blogSlideIndex >= event.children.length -1) {
+            nextBtn.style.display = "none"
+        } else {
+            nextBtn.style.display = "block"
+        }  
+    })
+}
 
 event.addEventListener("click", function(event) {
     const clickedElement = event.target;
@@ -43,13 +63,20 @@ event.addEventListener("click", function(event) {
 if(clickedElement.closest(".prev")) {
     blogSlideIndex--;
     updateSlidePosition();
+    toggleArrow();
+
     
 }
 else if (clickedElement.closest(".next")){
     blogSlideIndex++;
     updateSlidePosition();
+    toggleArrow();
 }
 });};
+
+//Clicked Post
+
+
 
 // Fetch API
 
@@ -95,7 +122,7 @@ function filterStickyPosts() {
         const date = new Date(post.date_gmt);
         const dateOnly = date.toISOString().split('T')[0];
         featuredContainer.innerHTML += `
-        <div class="blogpost-container-single" style="background-image: url(${imageUrl});">
+        <div class="blogpost-container-single" style="background-image: url(${imageUrl});" data-url="blogspecific.html?id=${post.id}">
             <div>
                 <h3>${post.title.rendered}</h3>
                 <p>${dateOnly}</p>
@@ -129,7 +156,7 @@ function filterRecentPosts(posts) {
         const date = new Date(post.date_gmt);
         const dateOnly = date.toISOString().split('T')[0];
         recentContainer.innerHTML += `
-        <div class="blogpost-container-single" style="background-image: url(${imageUrl});">
+        <div class="blogpost-container-single" style="background-image: url(${imageUrl});" data-url="blogspecific.html?id=${post.id}">
             <div>
                 <h3>${post.title.rendered}</h3>
                 <p>${dateOnly}</p>
@@ -147,14 +174,28 @@ function filterRecentPosts(posts) {
 carousel(recentContainer);
 };
 
+
 carouselSlidesContainer.forEach(function(slide){
     
 slide.addEventListener("click", function(event){
+
+    const openSinglePost = (dataUrl) => {
+        if(dataUrl){
+            window.location.href = dataUrl;
+        }
+    };
     if (event.target.closest("button")){
         return;
     }
-    if (slide.closest(".carousel")){
-        window.location.href = "/blog.html"
-    }
+        const clickedPost = event.target.closest(".blogpost-container-single")
+        if (clickedPost) {
+            const blogDetailsUrl = clickedPost.getAttribute("data-url");
+            openSinglePost(blogDetailsUrl);
+        }
 });
 });
+
+
+
+
+
