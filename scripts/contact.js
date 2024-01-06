@@ -87,6 +87,7 @@ const displayMessageError = () => {
 
 const url = "https://travelblog.skr3d3.com/wp-json/contact-form-7/v1/contact-forms/e48b562/feedback"
 
+
 async function submitForm(contactForm) {
     try{
         const body = new FormData(contactForm);
@@ -106,8 +107,6 @@ async function submitForm(contactForm) {
 }
 catch(error){
     console.error("Error submitting contactform", error)
-}
-finally{
 }
 };
 
