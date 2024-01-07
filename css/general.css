@@ -11,6 +11,7 @@ body {
 main {
     min-height: calc(100vh - 210px);
     overflow-y: scroll;
+    overflow-x: hidden;
     animation-name: "show-page";
     animation: show-page 0.3s forwards;
 }
