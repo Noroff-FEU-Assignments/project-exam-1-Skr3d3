@@ -120,7 +120,7 @@ catch(error){
         submitMessage.style.display = "block";
     }else {
     submitMessage.innerHTML = "Your message has been submitted!<br>Thank you for reaching out.";
-    submitForm();
+    submitForm(contactForm);
     formButton.classList.add("disabled");
     submitMessage.classList.remove("error");
     contactForm.reset();
