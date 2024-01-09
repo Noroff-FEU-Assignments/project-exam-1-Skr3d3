@@ -6,9 +6,15 @@ const recentContainer = document.querySelector(".recent-container");
 const carouselContainer = document.querySelectorAll(".carousel-container");
 const carouselSlidesContainer = document.querySelectorAll(".carousel");
 
-document.getElementById("enterblog-button").addEventListener("click", function() {
-    window.location.href = "/blog.html";
-});
+const blogBtns = document.querySelectorAll(".blogbutton")
+
+
+blogBtns.forEach(function(blogBtn){
+    blogBtn.addEventListener("click", function() {
+        window.location.href = "/blog.html";
+    });
+    
+})
 
 const disabledBtn = document.querySelector(".disabled");
 
@@ -128,7 +134,7 @@ function filterStickyPosts() {
                 <p>${dateOnly}</p>
             </div>
             <div>
-                <a>Click to see all posts!</a>
+                <a>Click to see post!</a>
             </div>
             <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
             <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
@@ -162,7 +168,7 @@ function filterRecentPosts(posts) {
                 <p>${dateOnly}</p>
             </div>
             <div>
-                <a>Click to see all posts!</a>
+                <a>Click to see post!</a>
             </div>
             <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
             <button class="next"><i class="fa-solid fa-arrow-right"></i></button>

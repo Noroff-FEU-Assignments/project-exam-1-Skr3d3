@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog about traveling to the best places in Norway. Get a grasp on beautiful locations in Norway">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Slab:wght@100;400;500&display=swap" rel="stylesheet"> 
@@ -16,24 +17,24 @@
 </head>
 <body>
     <header>
-        <image class="logo">
-        <div class="searchbar-container">
-        <input id="searchbar" placeholder="Search for blog posts..."></input>
-        <i id="searchbar-label" class="fa-solid fa-magnifying-glass"></i>
+        <image tabindex="4" class="logo" alt="Logo - Patrick's Travel blog">
+        <div tabindex="2" class="searchbar-container">
+        <input tabindex="2" id="searchbar" placeholder="Search for blog posts..."></input>
+        <i id="searchbar-label" class="fa-solid fa-magnifying-glass" aria-label="Search"></i>
         </div>
-        <i id="hamburger-menu" class="fa-solid fa-bars"></i>
+        <i tabindex="1" id="hamburger-menu" class="fa-solid fa-bars" aria-label="Hamburger menu"></i>
         <nav> 
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
+            <a tabindex="1" href="index.html">Home</a>
+            <a tabindex="1" href="blog.html">Blog</a>
+            <a tabindex="1" href="contact.html">Contact</a>
+            <a tabindex="1" href="about.html">About</a>
         </nav>
     </header>
     <main>
         <section class="welcome-section full-section">
         <h1 class="indexh1">Travel Blog</h1>
         <p>Travelling to destinations in Norway</p>
-        <button id="enterblog-button" class="default-button">Go to blog</button>
+        <button tabindex="3 " id="gotoblog" class="default-button blogbutton">Go to blog</button>
         
         </section>
 
@@ -55,9 +56,9 @@
             </div>
             <div class="featured-container carousel">
                 <!--Live data-->
-                
             </div>
             </div>
+            <button class="default-button blogbutton">Go to blog</button>
         </section>
 
         <section class="banner-section full-section">
@@ -86,6 +87,7 @@
                 <!--Live data-->
             </div>
             </div>
+            <button class="default-button blogbutton">Go to blog</button>
         </section>
 
         <section class="mailinglist-section full-section">
@@ -116,19 +118,19 @@
             </div>
             </div>
             <div class="socialmedia-mobile-container">
-                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> </a>
-                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> </a>
-                <a href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i> </a>
-                <a href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> </a>
+                <a href="http://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i> </a>
+                <a href="http://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> </a>
+                <a href="http://www.x.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i> </a>
+                <a href="http://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> </a>
             </div>
         </section>
         <section class="signature">
             <p>© 2023 Patrick's Travel Blog. Website by Patrick Skrede.</p>
             <div class="socialmedia-container">
-                <a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a tabindex="-1" aria-hidden="true" href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a tabindex="-1" aria-hidden="true" href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a tabindex="-1" aria-hidden="true" href="http://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a tabindex="-1" aria-hidden="true" href="http://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </section>
     </footer>

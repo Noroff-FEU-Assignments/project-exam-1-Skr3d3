@@ -94,3 +94,8 @@ document.addEventListener("click", function(){
     searchBarOutsideClick(event);
 });
 
+hamburgerIcon.addEventListener("keydown", function(e){
+    if(13 == e.keyCode) {   
+        toggleHamburgerMenu(); 
+    }
+});

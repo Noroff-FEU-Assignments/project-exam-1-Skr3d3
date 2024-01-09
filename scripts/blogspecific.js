@@ -1,3 +1,5 @@
+const title = document.querySelector("title");
+
 //params
 
 const queryString = document.location.search;
@@ -93,6 +95,8 @@ async function getPosts(url) {
                 imagesContainer += image.outerHTML;
                 };
             };
+
+            title.innerHTML = `${post.title.rendered}`
             
     
             blogPostContainer.innerHTML += `
