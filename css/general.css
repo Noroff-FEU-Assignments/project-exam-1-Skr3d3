@@ -186,6 +186,8 @@ nav a:active {
 }
 .banner-section div {
     background-image: url("/media/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     width: 100vw;
