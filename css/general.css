@@ -354,6 +354,7 @@ nav a:active {
     flex-direction: column;
     justify-content: space-between;
     transition-duration: 0.3s;
+    border-radius: 2px;
 }
 .blogpost-container-single:is(:hover,:active) {
     transform: scale(1.02);
@@ -367,6 +368,7 @@ nav a:active {
     background-color: var(--primarycoloralpha);
     color: var(--navcolor);
     height: 50px;
+    border-radius: 2px;
 }
 .blogpost-container-single p {
     font-size: 15px;
