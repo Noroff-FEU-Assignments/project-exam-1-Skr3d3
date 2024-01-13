@@ -83,6 +83,17 @@ footer > section:last-child {
     display: flex;
     flex-direction: column;
 }
+.hidden {
+    opacity: 0;
+    transition: all 900ms;
+    filter: blur(3px);
+    transform: scale(0.8);
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+}
 .socialmedia-mobile-container {
     display:flex;
     justify-content: center;
@@ -243,6 +254,7 @@ nav a:active {
 .wiggleanimation {
     animation: wiggle 100ms ease-in-out infinite;
 }
+
 /*Blog specific page*/
 
 .blogspecific-section {
@@ -595,4 +607,16 @@ nav {
     0% {transform: scale(1);}
     50% {transform: scale(1.2);}
     100% {transform: scale(1);}
+}
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }   
+    .wiggleanimation {
+        animation: none;
+    }
+    .circle-of-circles {
+        animation: rotate 10s linear infinite;
+    }
 }

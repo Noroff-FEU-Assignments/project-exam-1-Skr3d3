@@ -5,6 +5,25 @@ const body = document.body;
 const footer = document.querySelector("footer");
 const header = document.querySelector("header");
 
+// Scrol animation
+
+
+const observer = new IntersectionObserver(function(events) {
+    events.forEach(function(event){
+        console.log(event);
+        if (event.isIntersecting) {
+            event.target.classList.add("show");
+        } else {
+            event.target.classList.remove("show");
+        }
+    })
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach(function(element){
+    observer.observe(element);
+});
+
 //Misc
 
 const disabledAnimation = (event) => {

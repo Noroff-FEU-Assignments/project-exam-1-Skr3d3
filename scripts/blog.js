@@ -73,7 +73,7 @@ function showPosts() {
         showMoreBtn.style.display = "block";
 
         blogPostsContainer.innerHTML += `
-        <div class="blogpost-container-single" style="background-image: url(${imageUrl});" data-url="blogspecific.html?id=${post.id}">
+        <div class="blogpost-container-single hidden" style="background-image: url(${imageUrl});" data-url="blogspecific.html?id=${post.id}">
             <div>
                 <h3>${post.title.rendered}</h3>
                 <p>${dateOnly}</p>
