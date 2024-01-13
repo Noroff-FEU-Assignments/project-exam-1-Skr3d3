@@ -18,11 +18,13 @@ const observer = new IntersectionObserver(function(events) {
         }
     })
 });
-
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach(function(element){
+document.addEventListener("DOMContentLoaded", function(){
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach(function(element){
     observer.observe(element);
 });
+})
+
 
 //Misc
 
