@@ -42,6 +42,9 @@ header > *:not(nav) {
     margin: 10px;
     font-size: 30px;
 }
+header .logo {
+    margin-left: 50px;
+}
 header i {
     color: var(--secondarycolor);
     padding: 10px;
