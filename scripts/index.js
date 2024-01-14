@@ -45,8 +45,8 @@ function updateSlidePosition() {
     event.style.transform = `translateX(${-blogSlideIndex * 100}%)`
 };
 
-function toggleArrow() {
-    document.querySelectorAll(".prev").forEach(function(prevBtn){
+function toggleArrow(blogSlideIndex, event) {
+    event.querySelectorAll(".prev").forEach(function(prevBtn){
         if (blogSlideIndex <= 0) {
             prevBtn.style.display = "none"
         } else {
@@ -54,7 +54,7 @@ function toggleArrow() {
         }  
     })
     
-    document.querySelectorAll(".next").forEach(function(nextBtn){
+    event.querySelectorAll(".next").forEach(function(nextBtn){
         if (blogSlideIndex >= event.children.length -1) {
             nextBtn.style.display = "none"
         } else {
@@ -69,14 +69,14 @@ event.addEventListener("click", function(event) {
 if(clickedElement.closest(".prev")) {
     blogSlideIndex--;
     updateSlidePosition();
-    toggleArrow();
+    toggleArrow(blogSlideIndex, event.currentTarget);
 
     
 }
 else if (clickedElement.closest(".next")){
     blogSlideIndex++;
     updateSlidePosition();
-    toggleArrow();
+    toggleArrow(blogSlideIndex, event.currentTarget);
 }
 });};
 
