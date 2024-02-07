@@ -42,9 +42,6 @@ header > *:not(nav) {
     margin: 10px;
     font-size: 30px;
 }
-header .logo {
-    margin-left: 50px;
-}
 header i {
     color: var(--secondarycolor);
     padding: 10px;
@@ -118,7 +115,6 @@ footer > section:last-child {
 #searchbar {
     font-size: 20px;
     letter-spacing: 1px;
-    display:none;
     position: fixed;
     top: 76px;
     width: 280px;
@@ -145,7 +141,7 @@ header, footer {
     height: 70px;
 }
 #hamburger-menu {
-    margin-right: 50px;
+    margin-right: 25px;
     font-size: 2rem;
 }
 nav {
@@ -546,6 +542,13 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+    
+header .logo {
+    margin-left: 75px;
+}
+#hamburger-menu {
+    margin-right: 75px;
+}
 
 .blog-container {
     grid-template-columns: repeat(3, 1fr);
