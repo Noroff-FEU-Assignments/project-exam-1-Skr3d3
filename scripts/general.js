@@ -52,7 +52,7 @@ searchBarIcon.addEventListener("click", function(){
     if(searchBar.style.display !== "block"){
     searchBar.style.display = "block";
 }else{
-    window.location.href = `/blogspecific.html?search=${searchBar.value}`
+    window.location.href = `/blog.html?search=${searchBar.value}`
 }
 })
 function searchBarOutsideClick(event) {
@@ -62,7 +62,7 @@ function searchBarOutsideClick(event) {
 
 searchBar.addEventListener("keydown", function(event){
     if(event.keyCode === 13){
-    window.location.href = `/blogspecific.html?search=${searchBar.value}`
+    window.location.href = `/blog.html?search=${searchBar.value}`
 }});
 
 document.addEventListener("click", function(){
